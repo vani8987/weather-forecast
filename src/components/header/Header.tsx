@@ -1,13 +1,14 @@
 import Search from "./Search/Search";
 
 interface TypeHeader{
-    handlerCity: (event:React.ChangeEvent<HTMLInputElement>) => void
+    handlerCity: (event: React.FormEvent<EventTarget>) => void
+    ValueInputCity: any
 }
 
-const Header:React.FC<TypeHeader> = ({handlerCity}) => {
+const Header:React.FC<TypeHeader> = ({handlerCity, ValueInputCity}) => {
     return ( 
         <div>
-            <Search handlerCity={handlerCity}/>
+            <Search handlerCity={handlerCity} ValueInputCity={ValueInputCity}/>
         </div>
     );
 }

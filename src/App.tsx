@@ -11,7 +11,7 @@ function App() {
 
     const handlerCity = (event: React.FormEvent<EventTarget>):void => {
         event.preventDefault()
-        HandlerApiWeather(ValueInputCity.current.value.toLowerCase() + ", ru", setWeather)
+        HandlerApiWeather(ValueInputCity.current.value.toLowerCase().trim() + ", RU", setWeather)
         console.log(weatherApi)
     }
 

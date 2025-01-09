@@ -7,7 +7,7 @@ interface TypeHeader{
 
 const Header:React.FC<TypeHeader> = ({handlerCity, ValueInputCity}) => {
     return ( 
-        <div>
+        <div className="">
             <Search handlerCity={handlerCity} ValueInputCity={ValueInputCity}/>
         </div>
     );

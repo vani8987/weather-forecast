@@ -11,7 +11,7 @@ export default {
             "hoverColor": 'var(--hover--color)'
         },
         boxShadow: {
-            castomShadom: '4px 4px 8px 0px rgba(3, 3, 3, 0.5)',
+            castomShadom: '7px 7px 8px 0px rgba(0, 0, 0, 0.712)',
         }
       },
     },

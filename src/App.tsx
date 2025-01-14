@@ -54,7 +54,7 @@ function App() {
 
     return (
         <div className='h-screen bg-center bg-auto md:bg-cover' style={{ backgroundImage: `url(${bgImg})` }}>
-            <div className="px-10 py-5" >
+            <div className="px-5 py-3 md:px-8 md:y-5" >
                 <Header handlerCity={handlerCity} ValueInputCity={ValueInputCity}/>
                 <Main weatherApi={weatherApi}/>
             </div>

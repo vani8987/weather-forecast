@@ -14,13 +14,27 @@ import Thunderstorm from "./Assets/img/Thunderstorm.jpg"
 
 function App() {
     const ValueInputCity = useRef<any>(null)
-    const [weatherApi, setWeather] = useState<TypeWeather | null>(null)
+    const [weatherApi, setWeatherApi] = useState<TypeWeather | null>(null)
+    const [favoritСountries, setFavoritСountries] = useState<string[]>(JSON.parse(localStorage.getItem("favoritСountries")!) || [])
     const [bgImg, setBgImg] = useState<string | undefined>(undefined)
 
     const handlerCity = (event: React.FormEvent<EventTarget>):void => {
         event.preventDefault()
-        setWeather(null)
-        HandlerApiWeather(ValueInputCity.current.value.toLowerCase().trim() + ", RU", setWeather)
+        setWeatherApi(null)
+        HandlerApiWeather(ValueInputCity.current.value.toLowerCase().trim() + ", RU", setWeatherApi)
+    }
+
+    const handlerfavoritСountries = (): void => {
+        if (favoritСountries.includes(String(weatherApi?.name))) {
+          setFavoritСountries(favoritСountries => favoritСountries.filter(item => item !== String(weatherApi?.name))); 
+        } else {
+          setFavoritСountries((prevCity) => [...prevCity, String(weatherApi?.name)]);
+        }
+      };
+
+    const moreDetailed = (id: number):void => {
+        const filterCity = favoritСountries.filter((_, index) => index === id)
+        HandlerApiWeather(String(filterCity).toLowerCase().trim() + ", RU", setWeatherApi)
     }
 
     useEffect(() => {
@@ -50,13 +64,15 @@ function App() {
                 setBgImg(Cloudy)
                 break
         }
-    }, [weatherApi])
+        
+        localStorage.setItem("favoritСountries", JSON.stringify(favoritСountries))
+    }, [weatherApi, favoritСountries])
 
     return (
-        <div className='h-screen bg-center bg-auto md:bg-cover' style={{ backgroundImage: `url(${bgImg})` }}>
-            <div className="px-5 py-3 md:px-8 md:y-5" >
-                <Header handlerCity={handlerCity} ValueInputCity={ValueInputCity}/>
-                <Main weatherApi={weatherApi}/>
+        <div className='h-screen bg-center bg-cover' style={{ backgroundImage: `url(${bgImg})` }}>
+            <div className="px-8 py-3" >
+                <Header handlerCity={handlerCity} ValueInputCity={ValueInputCity} favoritСountries={favoritСountries} moreDetailed={moreDetailed}/>
+                <Main weatherApi={weatherApi} favoritСountries={favoritСountries} handlerfavoritСountries={handlerfavoritСountries}/>
             </div>
         </div>
     )

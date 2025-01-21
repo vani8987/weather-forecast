@@ -12,6 +12,21 @@ export default {
         },
         boxShadow: {
             castomShadom: '7px 7px 8px 0px rgba(0, 0, 0, 0.712)',
+        },
+        keyframes: {
+            "fade-in-left": {
+              "0%": {
+                  opacity: 0,
+                  transform: "translate3d(-100%, 0, 0)",
+              },
+              "100%": {
+                  opacity: 1,
+                  transform: "translate3d(0, 0, 0)",
+              },
+            },
+        },
+        animation: {
+            fadeinleft: 'fade-in-left 0.4s ease-in-out',
         }
       },
     },

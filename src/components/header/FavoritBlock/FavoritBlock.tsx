@@ -1,5 +1,6 @@
+import React from 'react';
 interface TypeComponentFavoriteBlock {
-    favoritСountries: string
+    favoritСountries: string | null
     moreDetailed: (id: number) => void
     id: number
 }

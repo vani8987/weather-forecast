@@ -8,7 +8,7 @@ const IconWeather:React.FC<TypeComponents> = ({weatherApi}) => {
     return ( 
         <div className="py-9">
             {weatherApi === null ? (
-                <div data-testid="Skeleton">
+                <div data-testid="SkeletonIcon">
                     <Skeleton width={150} height={150} baseColor="#818181" highlightColor="#5a5a5a" duration={3}/>
                 </div>   
             ) : (

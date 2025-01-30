@@ -32,6 +32,8 @@ const Main:React.FC<TypeComponentsMain> = ({weatherApi, favoritСountries, handl
                         <CiHeart className="w-full pointer-events-none"/>
                     ))}
                 </button>
+
+                
             </div>
         </div>
     );

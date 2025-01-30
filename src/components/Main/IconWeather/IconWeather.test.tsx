@@ -8,14 +8,11 @@ describe("IconWeather", () => {
     it("WeatherApi empty", () => {
         const weatherApi = null
         render(<IconWeather  weatherApi={weatherApi} />)
-        const Skeleton = screen.getByTestId("Skeleton")
-        expect(Skeleton).not.toBeInTheDocument
+        expect(screen.getByTestId("SkeletonIcon")).toBeInTheDocument
     })
 
     it("WeatherApi not empty", () => {
-        const weatherApi = {weather: "облачно", temp: "23"}
-        render(<IconWeather  weatherApi={weatherApi} />)
-        const weatherIcon = screen.getByTestId("ImgWeather")
-        expect(weatherIcon).toBeInTheDocument
+        render(<IconWeather  weatherApi={{weather: "облачно", temp: "23"}} />)
+        expect(screen.getByTestId("ImgWeather")).toBeInTheDocument
     })
 })

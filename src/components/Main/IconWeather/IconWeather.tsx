@@ -1,7 +1,7 @@
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import TypeComponents from "../../../Type/TypeComponents";
-import React from "react";
+import React from "react"
 
 
 const IconWeather:React.FC<TypeComponents> = ({weatherApi}) => {

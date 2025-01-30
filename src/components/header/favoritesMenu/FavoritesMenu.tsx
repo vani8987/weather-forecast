@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoIosMenu } from "react-icons/io";
 import { IoMdClose } from "react-icons/io";
 import FavoritesBlock from "../FavoritBlock/FavoritBlock";
-import React from 'react';
+import React from "react"
 
 
 

@@ -10,6 +10,7 @@ import Drizzle from "./Assets/img/Drizzle.jpg"
 import Rain from "./Assets/img/Rain.jpg"
 import Snow from "./Assets/img/Snow.jpg"
 import Thunderstorm from "./Assets/img/Thunderstorm.jpg"
+import React from "react"
 
 
 function App() {
@@ -78,4 +79,5 @@ function App() {
     )
 }
 
-export default App
+export default App 
+

@@ -1,4 +1,5 @@
 import { IoIosSearch } from "react-icons/io";
+import React from "react";
 
 interface TypeSearch{
     handlerCity: (event: React.FormEvent<EventTarget>) => void

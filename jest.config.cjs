@@ -6,5 +6,5 @@ module.exports = {
     ],
     "transform": {
      "^.+\\.css$": "jest-transform-stub"
-   }
+    },
 };
